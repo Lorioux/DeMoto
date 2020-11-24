@@ -12,10 +12,11 @@ O projeto DeMoTo é desenvolvido numa abordagem de arquitetura de microserviços
 ### 1.0 Serviços de cadastro de usuários 
 
 Todos os usuários da plataforma têm a possibilidade de se cadastrar para a utilização segura dos serviços oferecidos. O cadastro de cada parte interessada dos principais intervenientes, depende em parte do perfil pretendido. 
+<ul>
+<li>Um usuário sempre tem o nome completo, data de nascimento, a morada, os contactos, e sempre que necessário o NIF. </li>
 
-Um usuário sempre tem o nome completo, data de nascimento, a morada, os contactos, e sempre que necessário o NIF. 
-
-Um usuário fornecedor sempre terá que ser associado a um estabelecimento comercial registadas nos serviços das finanças. 
+<li>Um usuário fornecedor sempre terá que ser associado a um estabelecimento comercial registadas nos serviços das finanças. </li>
+</ul>
 
  
 
