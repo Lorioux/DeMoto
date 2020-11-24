@@ -1,4 +1,7 @@
+/
+    db.sqlite3
+    
 /demoto
     settings.py
 
-db.sqlite3
+
