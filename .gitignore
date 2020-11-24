@@ -1,4 +1,4 @@
-demoto/
-    settings.py
-
+demoto/settings.py
 *.sqlite3
+usuario/
+    *.sqlite3
