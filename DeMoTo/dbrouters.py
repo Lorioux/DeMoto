@@ -2,7 +2,8 @@
 #Roteador para o modelo usuario basico
 class UsuarioRouter:
     
-    rota_app_label = {'usuario'}
+    def __init__(self):
+        self.rota_app_label = {'usuario'}
 
     def db_for_read(self, model, **hints):
         """
