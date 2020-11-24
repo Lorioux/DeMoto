@@ -1,7 +1,4 @@
 #Criar as rota para os modelos dos aplicativos
-
-from DeMoto.usuario.models import Usuario
-
 #Roteador para o modelo usuario basico
 class UsuarioRouter:
     

@@ -12,7 +12,7 @@ class Usuario (models.Model):
     criado_em = models.DateTimeField(auto_created=True)
     modificado_em = models.DateField(auto_created=False, editable=False)
 
-    ESTADO (
+    ESTADO = (
         ('P','PENDENTE'),
         ('I', 'INATIVO'),
         ('A', 'ATIVO')   
