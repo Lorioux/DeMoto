@@ -112,6 +112,8 @@ Os recursos representam os diversos objectos (entidades) que são manipuldados p
       <li> Pedido </li>
       <li> Percurso </li>
       <li> Encomenda </li>
+      <li> Comissão </l>
+      <li> Pagamento </l>
       <li> etc. </l>
      </ul>
    </td>
