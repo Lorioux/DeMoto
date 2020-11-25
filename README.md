@@ -3,11 +3,44 @@
  
  
 
-O projeto DeMoTo é desenvolvido numa abordagem de arquitetura de microserviços de gestão de entrega de encomendas. Os principais intervenientes desse tipo de serviços são: os consumidores (que iniciam o processo), os fornecedores (que preparam as encomendas), e os condutores (que entregam as encomendas). Também, torna-se necessário a existência de agentes (intermediários na aquisição de usuários da plataforma). Alem do mais, outros intervenientes são os serviços bancários que facultam os processamentos de pagamentos. 
+O projeto DeMoTo é desenvolvido numa abordagem de arquitetura de microserviços de gestão de entrega de encomendas. Os principais intervenientes desse tipo de serviços são: os consumidores (que submetem pedidos de produtos), os fornecedores (que preparam as encomendas), e os condutores (que entregam as encomendas). Também, torna-se necessário a existência de agentes (intermediários na aquisição de usuários da plataforma). Além do mais, outros intervenientes são os serviços bancários que facultam o processamento de pagamentos.
 
- 
+## Escopo de stakeholders
 
-## Escopo de serviços 
+As partes interessadas na execução dos diversos serviços da plataforma são determinantes na definição dos seus objectivos e suas métricas. Também, podemos a partir das necessidades e preocupações dos stakeholders definimos requisitos funcionais e restrições operacionais dos microserviços.
+
+### Descrição  das necessidades básicas das partes interessadas 
+<table>
+ <td>
+ <dl> 
+    <dt><h4>Consumidor</h4></dt>
+    <span>Necessidades:</span>
+  <dd>- Pesquisar produtos a partir do telemóvel </dd>
+    <dd>- Pedir produtos a partir do telemóvel </dd>
+    <dd>- Pagar os pedidos através do card de Crédito on-line </dd>
+    <dd>- Receber os recibos de pagamentos enviados no meu email</dd>
+    <dd>- Poder submeter reclamação através da plataforma</dd>
+    <dd>- Poder receber suporte através da plataforma</dd>
+    <dd>etc.</dd>
+ </dl>
+ </td>
+ <td>
+ <dl> 
+     <dt><h4>Fornecedor </h4></dt>
+     <dd>- Cadastrar os meus produtos a partir da meu telemóvel ou PC</dd>
+     <dd>- Receber pedidos de clientes(consumidores) à distância</dd>
+     <dd>- Vender os meus produtos à qualquer hora</dd>
+     <dd>- Receber pagamentos de produtos</dd>
+     <dd>- Poder receber suporte através da plataforma</dd>
+     <dd>etc.</dd>
+ </dl>
+ </td>
+</table>
+ <br>
+
+## Escopo de serviços
+
+O serviços suportados pela plataforma são desenvolvidos com base nas necessidades dos usuários, e segmentados em microserviços com base nas tarefas que executam através da plataforma. 
 
 ### 1.0 Serviços de cadastro de usuários 
 
@@ -51,8 +84,44 @@ Sempre que o condutor fizer a entregada, por confirmar a morada do consumidor à
 
 … 
 
-### 7.0 Serviço de publicidade 
+### 7.0 Serviço de anúncios 
 
 … 
 
+## Escopo de recursos
+
+Os recursos representam os diversos objectos (entidades) que são manipuldados pelo sistema ao servir as partes interessadas, inclusive. Recursos são elementos principais no desenvolvimento de sistemas adotando a arquitetura de microserviços. Os microserviços manipulam e servem os recursos através REST API, e neste caso concreto, pretendemos que a plaforma seja desenvolda com esta abordagem.
+
+<table>
+  <td>
+     <ul>
+      <li> Consumidor </l>
+      <li> Fornecedor </l>
+      <li> Condutor </l>
+      <li> Agente </l>
+      <li> Produto </l>
+      <li> Anúncio </l>
+      <li> etc. </l>
+     </ul>
+   </td>
+   <td>
+     <ul>
+      <li> Estabelecimento </l>
+      <li> Pedido </l>
+      <li> Percuso </l>
+      <li> Encomenda </l>
+      <li> etc. </l>
+     </ul>
+   </td>
+</table>
+
+### Descrição dos recursos-chave dos serviços 
+
+ <dl> 
+    <dt><h4>Consumidor</h4></dt>
+    <dd><span>...
+    </span>etc.</dd>
+ </dl>
+ 
+ <br>
  
