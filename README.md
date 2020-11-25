@@ -15,7 +15,7 @@ As partes interessadas na execução dos diversos serviços da plataforma são d
  <dl> 
     <dt><h4>Consumidor</h4></dt>
     <span>Necessidades:</span>
-  <dd>- Pesquisar produtos a partir do telemóvel </dd>
+    <dd>- Pesquisar produtos a partir do telemóvel </dd>
     <dd>- Pedir produtos a partir do telemóvel </dd>
     <dd>- Pagar os pedidos através do card de Crédito on-line </dd>
     <dd>- Receber os recibos de pagamentos enviados no meu email</dd>
@@ -27,12 +27,14 @@ As partes interessadas na execução dos diversos serviços da plataforma são d
  <td>
  <dl> 
      <dt><h4>Fornecedor </h4></dt>
+     <span>Necessidades:</span>
      <dd>- Cadastrar os meus produtos a partir da meu telemóvel ou PC</dd>
      <dd>- Receber pedidos de clientes(consumidores) à distância</dd>
      <dd>- Vender os meus produtos à qualquer hora</dd>
      <dd>- Receber pagamentos de produtos</dd>
      <dd>- Poder receber suporte através da plataforma</dd>
      <dd>etc.</dd>
+     <dd></dd>
  </dl>
  </td>
 </table>
