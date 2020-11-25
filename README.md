@@ -17,7 +17,7 @@ As partes interessadas na execução dos diversos serviços da plataforma são d
     <span>Necessidades:</span>
     <dd>- Pesquisar produtos a partir do telemóvel </dd>
     <dd>- Pedir produtos a partir do telemóvel </dd>
-    <dd>- Pagar os pedidos através do card de Crédito on-line </dd>
+    <dd>- Pagar os pedidos com o Cartão de Crédito on-line </dd>
     <dd>- Receber os recibos de pagamentos enviados no meu email</dd>
     <dd>- Poder submeter reclamação através da plataforma</dd>
     <dd>- Poder receber suporte através da plataforma</dd>
@@ -108,10 +108,10 @@ Os recursos representam os diversos objectos (entidades) que são manipuldados p
    </td>
    <td>
      <ul>
-      <li> Estabelecimento </l>
-      <li> Pedido </l>
-      <li> Percuso </l>
-      <li> Encomenda </l>
+      <li> Estabelecimento </li>
+      <li> Pedido </li>
+      <li> Percurso </li>
+      <li> Encomenda </li>
       <li> etc. </l>
      </ul>
    </td>
