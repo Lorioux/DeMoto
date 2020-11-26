@@ -26,5 +26,5 @@ urlpatterns += [
 ]
 
 urlpatterns += [
-    path('usuario/', include('usuario.urls', namespace='usuario'))
+    path('cadastro/', include('usuario.urls', namespace='cadastro'))
 ]
