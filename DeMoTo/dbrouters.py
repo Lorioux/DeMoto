@@ -22,7 +22,7 @@ class UsuarioRouter:
         """
         Encaminhas as tentativas de escrita do modelo usuario para a base de dados usuarios. caso contrario, retorna nulo
         """
-        if model._meta.app_label in rota_app_label:
+        if model._meta.app_label in self.rota_app_label:
             return 'usuarios'
         return None
 
