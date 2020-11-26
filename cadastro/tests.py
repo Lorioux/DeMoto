@@ -18,14 +18,14 @@ class CadastroTestCase(TestCase):
             chave='xssdedcevevesdvssrvrsvafeagadfdr' )
 
         cls.multiplo_cadastros = [
-            Cadastro.objects.create(
+            Cadastro(
                 usuario='ana@email.xyz', 
                 palavra_passe='simples', 
                 modificado_em=str(datetime.now()), 
                 estado = 'PENDENTE',
                 chave='xssdedcevevesdvssrvrsvafeagadfdr'
             ),
-            Cadastro.objects.create(
+            Cadastro(
                 usuario='magido@gmail.xyz', 
                 palavra_passe='simples', 
                 modificado_em=str(datetime.now()), 
@@ -71,4 +71,4 @@ class CadastroTestCase(TestCase):
         Testar a criacao de multiplos cadastros
         """
         count = Cadastro.objects.bulk_create(self.multiplo_cadastros)
-        self.assertEqual(2, count, msg="Falhou a criacao de multiplo cadastros")
+        self.assertEqual(2, len(count), msg="Falhou a criacao de multiplo cadastros")
