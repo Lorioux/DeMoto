@@ -19,7 +19,7 @@ class Cadastro(models.Model):
         unique=True)
     palavra_passe = models.CharField(verbose_name="Palavra-passe", max_length=128, blank=False)
     criado_em = models.DateTimeField(auto_created=True, default=str(datetime.datetime.now()))
-    modificado_em = models.DateTimeField(auto_created=False, editable=False)
+    modificado_em = models.DateTimeField(auto_created=False, editable=False, default=str(datetime.datetime.now()))
 
     ESTADO = (
         ('P','PENDENTE'),
@@ -40,6 +40,4 @@ class Cadastro(models.Model):
     def __str__(self):
         return self.usuario
 
-    def eliminar_cadastro(self, usuario=None):
-        return self.objects.filter(usuario=usuario).delete()
 
