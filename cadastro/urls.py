@@ -6,8 +6,10 @@ from .views import *
 app_name = 'cadastro'
 urlpatterns = [
     path('', cadastro.as_view(), name='cadastro'),
-    path('usuario/novo/', cadastro.criar_cadastro, name='novo-cadastro'),
-    path('usuario/<str:id>/', cadastro.procurar_cadastro_por_id),
-    path('usuario/<str:estado>/', cadastro.procurar_cadastros_por_estado)
-    
+    path('usuario/',  include([
+        re_path('^$', cadastro.renova_senha, name='nova-senha'),
+        path('novo/', cadastro.cria_cadastro, name='novo-usuario'),
+        path('inscrito/', cadastro.procura_cadastro_por_usuario, name='usuario')
+    ]) ),
+    path('usuarios/', cadastro.procura_cadastros_por_estado, name='usuarios'),   
 ]

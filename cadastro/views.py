@@ -1,9 +1,9 @@
-from datetime import datetime
 from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.http import request, response
+import sys
 
-from django.views.generic import View, RedirectView
+from django.views.generic import RedirectView
 
 from .models import Cadastro
 
@@ -29,7 +29,7 @@ class cadastro(RedirectView):
     def index(request):
         content = """
         <body>
-            <p>%s</p>
+            <p> %s </p>
         </body>
         """ % (request.META)
 
@@ -40,13 +40,32 @@ class cadastro(RedirectView):
             #criar_cadastro(usuario= kwargs.usuario, palavra_passe=kwargs.palavra_passe)
             return response.HttpResponse(content=content)
 
-    def criar_cadastro(request):
+    def cria_cadastro(request):
+        sys.stdout.write('Test criar cadastros ................\n')
         usuario = request.POST['usuario']
-        palavra_passe = request.POST['palavra_passe']
-        cadastro = QuerySet(model=Cadastro).create(usuario=usuario, palavra_passe=palavra_passe)
+        senha = request.POST['senha']
+        cadastro = QuerySet(model=Cadastro).create(usuario=usuario, senha=senha)
         content = cadastro
         return response.HttpResponse(content=content)
+    
+    def renova_senha(request):
+        """Renovacao da senha do usuario
+        """
+        usuario = request.POST['usuario']
+        senha = request.POST['senha']
+        cadastro = QuerySet(model=Cadastro).filter(usuario__exact=usuario).update(senha=senha)
+        return response.HttpResponse(content=cadastro)
+        pass
+ 
+    def procura_cadastro_por_usuario(request):
+        #sys.stdout.write(f'Testando procura_cadastro_por_usuario ................{request.GET}\n')
+        usuario = request.GET['usuario']
+        cadastro = QuerySet(model=Cadastro).get(usuario=usuario)
+        return response.HttpResponse(content=cadastro.usuario) #% cadastros.id
 
-    def procurar_cadastro_por_estado(request, estado):
-        cadastros = QuerySet(model=Cadastro).get(estado=estado)
-        return response.HttpResponse(content="Achados [ %s ]") % cadastros
+    def procura_cadastros_por_estado(request):
+        #sys.stdout.write(f'Testa procurando_cadastros_por_estado ................{request.GET}\n')
+        estado = request.GET['estado']
+        cadastros = QuerySet(model=Cadastro).filter(estado__exact=estado)
+        return response.HttpResponse(content=cadastros.count())
+    

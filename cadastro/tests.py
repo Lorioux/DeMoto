@@ -14,28 +14,28 @@ class CadastroModeloTestCase(TestCase):
         cls.modulo = QuerySet(model=Cadastro,  using='cadastros')
         cls.cadastro, cls.criado = cls.modulo.get_or_create(
             usuario='test@test.xyz', 
-            palavra_passe='simples', 
+            senha='simples', 
             modificado_em=str(datetime.now()), 
             estado = 'PENDENTE',
             chave='xssdedcevevesdvssrvrsvafeagadfdr')
         cls.multiplo_cadastros = [
             Cadastro(
                 usuario='ana@email.xyz', 
-                palavra_passe='simples', 
+                senha='simples', 
                 modificado_em=str(datetime.now()), 
                 estado = 'PENDENTE',
                 chave='xssdedcevevesdvssrvrsvafeagadfdr'
             ),
             Cadastro(
                 usuario='magido@gmail.xyz', 
-                palavra_passe='simples', 
+                senha='simples', 
                 modificado_em=str(datetime.now()), 
                 estado = 'ATIVO',
                 chave='xssdedcevevesdvssrvrsvafeagadfdr'
             ),
             Cadastro(
                 usuario='test3@gmail.xyz', 
-                palavra_passe='simples', 
+                senha='simples', 
                 modificado_em=str(datetime.now()), 
                 estado = 'INATIVO',
                 chave='xssdedcevevesdvssrvrsvafeagadfdr'
@@ -108,18 +108,40 @@ class CadastroApiTestCase(TestCase):
         super().setUp()
         pass
 
-    def test_criarCadastro(self):
-        response = self.client.post('/cadastro/usuario/novo/', data={'usuario':'testapi@test.xyz', 'palavra_passe':'simples'}, extra={'accept':'application/json'})
+    def test_1_cria_novo_cadastro(self):
+        response = self.client.post('/cadastro/usuario/novo/', data={'usuario':'testapi@test.xyz', 'senha':'simples'}, extra={'accept':'application/json'})
         #print("Response code: ", response.content)
         self.assertContains(response= response,text='testapi@test.xyz', status_code=200 )
         pass
 
-    def test_leituraCadastro(self):
-        response = self.client.get('/cadastro/1/pendente/')
-        print("Response code: ", response.content)
+    def test_2_procura_cadastro_por_usuario(self):
+        QuerySet(model=Cadastro).create(usuario='testapi@test.xyz', senha='simples')
+        response = self.client.get('/cadastro/usuario/inscrito/', data={'usuario':'testapi@test.xyz'})
+        self.assertContains(response, status_code=200, text='testapi@test.xyz') #("Response code_2: ", response.status_code)
         pass
 
-    def test_leituraCadastro(self):
-        response = self.client.get('/cadastro/1/pendente/')
-        print("Response code: ", response.content)
+    def test_3_procura_cadastros_por_estado(self):
+        """Testa a pesquisa de cadastros por estado
+        """
+        cadastros = [
+            Cadastro(usuario='testapi1@test.xyz', senha='simples'),
+            Cadastro(usuario='testapi2@test.xyz', senha='simples'),
+            Cadastro(usuario='testapi3@test.xyz', senha='simples')
+        ]
+        QuerySet(model=Cadastro).bulk_create(cadastros)
+        response = self.client.get('/cadastro/usuarios/', data={'estado':'PENDENTE'})
+        #print("Response code_3: ", response.content)
+        self.assertContains(response=response, status_code=200, text=3) 
         pass
+
+    def test_4_atualiza_estado_cadastro(self):
+        """Testa a atualizacao de estado do cadastro  
+        """
+        pass
+
+    def test_5_renova_senha(self):
+        """Testa a renovacao da palavra-passe
+        """
+        QuerySet(model=Cadastro).create(usuario='testapi@test.xyz', senha='simples')
+        response = self.client.post('/cadastro/usuario/', data={'usuario':'testapi@test.xyz', 'senha':'simples+diferente'})
+        self.assertContains(response=response, text=1, status_code=200)

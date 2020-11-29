@@ -17,7 +17,7 @@ class Cadastro(models.Model):
         blank=False, 
         primary_key=True,
         unique=True)
-    palavra_passe = models.CharField(verbose_name="Palavra-passe", max_length=128, blank=False)
+    senha = models.CharField(verbose_name="Palavra-passe", max_length=128, blank=False)
     criado_em = models.DateTimeField(auto_created=True, default=str(datetime.datetime.now()))
     modificado_em = models.DateTimeField(auto_created=False, editable=False, default=str(datetime.datetime.now()))
 
@@ -31,7 +31,7 @@ class Cadastro(models.Model):
     chave = models.CharField(max_length=255, blank=False, editable=False)
 
     class Meta:
-        ordering = ['usuario', 'palavra_passe']
+        ordering = ['usuario', 'estado']
         UniqueConstraint(
             fields = ['usuario'],
             name = 'usuario_unico'
