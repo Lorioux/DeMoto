@@ -20,7 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '9h+&_=g1o!jjoyjpsb!&+vbjrn_ng$l3hg^u^t8c=(x14wrgdu'
+from  . import cybersec 
+SECRET_KEY = cybersec.SEC_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'agencia.apps.AgenciaConfig',
-    'usuario.apps.UsuarioConfig',
+    'cadastro.apps.CadastroConfig',
 ]
 
 MIDDLEWARE = [
@@ -78,17 +79,21 @@ WSGI_APPLICATION = 'demoto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, '.dbases/default.sqlite3'),
     },
-    'usuarios': {
+    'cadastros': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'usuario/usuarios.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, '.dbases/cadastros.sqlite3'),
+        'TEST': {
+            'NAME': 'test_cadastros',
+            'DEPENDENCIES': [],
+        }
     }
 
 }
 
 DATABASE_ROUTERS = [
-    'demoto.dbrouters.UsuarioRouter',
+    'demoto.dbrouters.CadastroRouter',
 ]
 
 # Password validation
