@@ -1,4 +1,5 @@
 from django.db.models.query import QuerySet
+from django.http import response
 from django.test import TestCase
 from django.db.models import Q
 from datetime import datetime
@@ -134,14 +135,17 @@ class CadastroApiTestCase(TestCase):
         self.assertContains(response=response, status_code=200, text=3) 
         pass
 
-    def test_4_atualiza_estado_cadastro(self):
+    def test_4_modifica_estado_cadastro(self):
         """Testa a atualizacao de estado do cadastro  
         """
-        pass
+        QuerySet(model=Cadastro).create(usuario='testapi1@test.xyz', senha='simples')
+        response = self.client.post('/cadastro/usuario/estado/', data={'usuario':'testapi1@test.xyz', 'estado':'ATIVO'})
+        self.assertContains(response=response, text=1, status_code=200)
+        
 
     def test_5_renova_senha(self):
         """Testa a renovacao da palavra-passe
         """
         QuerySet(model=Cadastro).create(usuario='testapi@test.xyz', senha='simples')
-        response = self.client.post('/cadastro/usuario/', data={'usuario':'testapi@test.xyz', 'senha':'simples+diferente'})
+        response = self.client.post('/cadastro/usuario/senha/', data={'usuario':'testapi@test.xyz', 'senha':'simples+diferente'})
         self.assertContains(response=response, text=1, status_code=200)

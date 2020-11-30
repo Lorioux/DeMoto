@@ -1,6 +1,7 @@
 ./.dbases/*.*
 *.sqlite3
-./demoto/settings.py
+
+./demoto/cybersec.py
 
 
 
