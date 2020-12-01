@@ -30,7 +30,7 @@ subscritos, deverá optar por validar a sua autenticação através do cadastro.
 
 #### Modelo REST API
 ....
-<code>
+<pre>
 swagger: "2.0"
 info:
   description: "Modelo API do servidor da platforma - DeMoTo Entregas.  Para mais detalhes veja o repositorio DeMoTo - [https://github.com/Lorioux/DeMoto](https://github.com/Lorioux/DeMoto). Para este modelo podera usar chave api `chave-especial` para testar os filtros de autenticacao."
@@ -441,4 +441,4 @@ externalDocs:
   description: "Find out more about Swagger"
   url: "http://swagger.io"
 
-</code>
+</pre>
