@@ -29,11 +29,10 @@ subscritos, deverá optar por validar a sua autenticação através do cadastro.
 </ul>
 
 #### Modelo REST API
-....
-<pre>
-swagger: "2.0"
-info:
-  description: "Modelo API do servidor da platforma - DeMoTo Entregas.  Para mais detalhes veja o repositorio DeMoTo - [https://github.com/Lorioux/DeMoto](https://github.com/Lorioux/DeMoto). Para este modelo podera usar chave api `chave-especial` para testar os filtros de autenticacao."
+<pre>....
+swagger: "2.0" <br>
+info: <br>
+  description: "Modelo API do servidor da platforma - DeMoTo Entregas.  Para mais detalhes veja o repositorio DeMoTo -  [https://github.com/Lorioux/DeMoto(https://github.com/Lorioux/DeMoto).   Para este modelo podera usar chave api `chave-especial` para testar os filtros de autenticacao."
   version: "1.0.0"
   title: "DeMoTo Delivery"
   termsOfService: "http://demoto.io/terms/"
@@ -59,7 +58,8 @@ paths:
       tags:
       - "cadastro"
       summary: "Cria novo cadastro de base."
-      description: "Operacao de criacao de cadastro com informacao base `usuario, senha, perfil` fornecido atraves do corpo do requisicao (obtidos, por exemplo, a partir de um formulario)."
+      description: "Operacao de criacao de cadastro com informacao base `usuario, senha, perfil` fornecido a
+      traves do corpo do requisicao (obtidos, por exemplo, a partir de um formulario)."
       operationId: "cria_cadastro"
       consumes:
       - "application/json"
