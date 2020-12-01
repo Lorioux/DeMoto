@@ -11,12 +11,9 @@ O cadastro é recurso da plataforma necessário para o registo inicial basico pa
   <li> estado - representa estado do perfil associado ao cadastro (ex.: pendente, ativo, inativo, suspenso, etc.)</li>
 </ul>
 
-### Descrição de operações sobre o cadastro
+### Operações sobre o cadastro
 
-Sempre que o usuário (stakeholder) quiser subscrever os serviços será direcionado à página de cadastro - para criar um novo. Ou se tiver cadastro criado, sempre que quiser usar os serviços 
-subscritos, deverá optar por validar a sua autenticação através do cadastro.
-
-##### Operações básicos de carácter público
+Sempre que o usuário (stakeholder) quiser subscrever os serviços será direcionado à página de cadastro - para criar um novo. Ou se tiver cadastro criado, sempre que quiser usar os serviços  subscritos, deverá optar por validar a sua autenticação através do cadastro.
 <ul>
   <li>criacao do cadastro</li>
   <li>leitura do usuário </li>
