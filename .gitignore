@@ -1,7 +1,6 @@
-./.dbases/*.*
-*.sqlite3
+.dbases/*.sqlite3
 
-./demoto/cybersec.py
+demoto/cybersec.py
 
 
 

@@ -23,11 +23,11 @@ class CadastroView(RedirectView):
 
 def cria_cadastro(request):
     """Criacao de novo cadastro com base nos valores de  [usuario e senha] fornecidos no request.
+
     Args:
         request: HttpRequest, com o metodo POST
     Retorna:
-        repos
-
+        reponse: HttpResponse, contendo a cadastro
     """
     #sys.stdout.write('Test criar cadastros ................\n')
     usuario = request.POST['usuario']
