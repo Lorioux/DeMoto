@@ -12,7 +12,7 @@ RUN mkdir .environ
 
 ADD .devcontainer/setup-entry-point.sh .environ/setup-entry-point.sh
 
-ENV SETUP_FILE=/demoto/.environ/setup-entry-point.sh
+RUN export SETUP_FILE=/demoto/.environ/setup-entry-point.sh
 
 # Change mode to ./setup-entry-point.sh
 RUN chmod +x $SETUP_FILE
