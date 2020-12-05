@@ -1,5 +1,3 @@
-#!/usr/bin/env
-
 # update and upgrade
 apk update && apk upgrade
 
@@ -14,4 +12,6 @@ if [ -f requirements.txt ]; then
   pip install -r requirements.txt
 fi
 
+python3 manage.py makemigrations
+python3 manage.py migrate
 
