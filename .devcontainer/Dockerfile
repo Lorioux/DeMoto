@@ -9,7 +9,7 @@ WORKDIR /demoto
 COPY ../ /demoto
 
 # Change mode to ./setup-entry-point.sh
-RUN chmod +x setup-entry-point.sh
+RUN chmod +x setup-entry-point
 
 ENTRYPOINT ["./setup-entry-point.sh"]
 
