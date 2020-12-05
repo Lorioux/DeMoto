@@ -8,7 +8,7 @@ COPY ../ /demoto
 
 WORKDIR /demoto
 
-ADD .devcontainer/setup-entry-point.sh setup-entry-point.sh
+RUN cp .devcontainer/setup-entry-point.sh .
 
 RUN export SETUP_FILE=/demoto/setup-entry-point.sh
 
