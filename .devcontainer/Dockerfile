@@ -7,3 +7,12 @@ RUN mkdir demoto
 WORKDIR /demoto
 
 COPY ../ /demoto
+
+# Change mode to ./setup-entry-point.sh
+RUN chmod +x setup-entry-point.sh
+
+ENTRYPOINT ["./setup-entry-point.sh"]
+
+# run server at port 80
+CMD python3 manage.py runserver 80
+
