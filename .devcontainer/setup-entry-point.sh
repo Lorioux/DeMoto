@@ -16,6 +16,7 @@ if [ -f requirements.txt ]; then
 fi
 
 # make migration and migrate databases
+cd ..
 python3 manage.py makemigrations
 python3 manage.py migrate
 
