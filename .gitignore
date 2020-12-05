@@ -2,9 +2,9 @@
 
 demoto/cybersec.py
 
-.venv
+.venv/*.*
 
-.devcontainer/*
+.devcontainer/*.*
 
 
 
