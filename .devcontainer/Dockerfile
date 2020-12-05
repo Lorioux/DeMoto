@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-EXPOSE 80 8080 8000
+EXPOSE 80:80 8080:8080 8000:8000
 
 RUN mkdir demoto demoto/.dbases
 

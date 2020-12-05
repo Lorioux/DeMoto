@@ -13,7 +13,5 @@ urlpatterns = [
         path('inscrito/', procura_cadastro_por_usuario, name='usuario'),
     ]) ),
     path('usuarios/', procura_cadastros_por_estado, name='usuarios'),
-    path('perfis/', procura_cadastro_por_perfil, name='perfis')  
+    path('perfis/', procura_cadastros_por_perfil, name='perfis'), 
 ]
-
-urlpatterns + = 

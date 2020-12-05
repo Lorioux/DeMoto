@@ -93,3 +93,9 @@ def procura_cadastros_por_estado(request):
     estado = request.GET['estado']
     numero_de_registos = QuerySet(model=Cadastro).filter(estado__exact=estado).count()
     return HttpResponse(content=numero_de_registos)
+
+def modifica_perfil_cadastro(request):
+    pass
+
+def procura_cadastros_por_perfil(request):
+    pass
