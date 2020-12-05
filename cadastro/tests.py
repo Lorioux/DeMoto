@@ -104,10 +104,13 @@ class CadastroModeloTestCase(TestCase):
 class CadastroApiTestCase(TestCase):
 
     databases = {'cadastros'}
-
-    def setUp(self):
-        super().setUp()
-        pass
+       
+    def setUpTestData(self):
+        self.cadastros = [
+            Cadastro(usuario='testapi1@test.xyz', senha='simples'),
+            Cadastro(usuario='testapi2@test.xyz', senha='simples'),
+            Cadastro(usuario='testapi3@test.xyz', senha='simples')
+        ]
 
     def test_1_cria_novo_cadastro(self):
         response = self.client.post('/cadastro/usuario/novo/', data={'usuario':'testapi@test.xyz', 'senha':'simples'}, extra={'accept':'application/json'})
@@ -124,11 +127,6 @@ class CadastroApiTestCase(TestCase):
     def test_3_procura_cadastros_por_estado(self):
         """Testa a pesquisa de cadastros por estado
         """
-        cadastros = [
-            Cadastro(usuario='testapi1@test.xyz', senha='simples'),
-            Cadastro(usuario='testapi2@test.xyz', senha='simples'),
-            Cadastro(usuario='testapi3@test.xyz', senha='simples')
-        ]
         QuerySet(model=Cadastro).bulk_create(cadastros)
         response = self.client.get('/cadastro/usuarios/', data={'estado':'PENDENTE'})
         #print("Response code_3: ", response.content)

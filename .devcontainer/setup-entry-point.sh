@@ -1,6 +1,9 @@
 # update and upgrade
 apk update && apk upgrade
 
+# install git package
+apk add git
+
 # install python and packages
 apk add python3 py3-pip
 

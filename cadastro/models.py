@@ -12,23 +12,30 @@ class Cadastro(models.Model):
     Vamos criar um modelo de usuario contendo os campos de referencia basicos de usuario, a saber: o identificador, o email, e palavra-chase encriptada, 
     a data de criacao e data de ultima modificacao, estado do registo.
     """
+    PERFIL = (
+        ('FO', 'FORNECEDOR'),
+        ('CO', 'CONSUMIDOR'),
+        ('AG', 'AGENTE'),
+        ('CD', 'CONDUTOR')
+    )
+    ESTADO = (
+        ('P','PENDENTE'),
+        ('I', 'INATIVO'),
+        ('A', 'ATIVO'),
+        ('S', 'SUSPENSO')   
+    )
+
     usuario = models.CharField(verbose_name="Utilizador", 
         max_length=55, 
         blank=False, 
         primary_key=True,
         unique=True)
     senha = models.CharField(verbose_name="Palavra-passe", max_length=128, blank=False)
-    criado_em = models.DateTimeField(auto_created=True, default=str(datetime.datetime.now()))
-    modificado_em = models.DateTimeField(auto_created=False, editable=False, default=str(datetime.datetime.now()))
-
-    ESTADO = (
-        ('P','PENDENTE'),
-        ('I', 'INATIVO'),
-        ('A', 'ATIVO')   
-    )
-
+    perfilf = models.CharField(verbose_name="Perfil do usuario", max_length=2, choices=PERFIL, default="CONSUMIDOR", blank=False)
     estado = models.CharField(max_length=1, choices=ESTADO, default="PENDENTE")
     chave = models.CharField(max_length=255, blank=False, editable=False)
+    criado_em = models.DateTimeField(auto_created=True, default=str(datetime.datetime.now()))
+    modificado_em = models.DateTimeField(auto_created=False, editable=False, default=str(datetime.datetime.now()))
 
     class Meta:
         ordering = ['usuario', 'estado']
