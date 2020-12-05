@@ -50,3 +50,20 @@ jobs:
           push: true
           tags: ${{secrets.DOCKER_USERNAME}}/demoto-github-image:v1.0
           #run: docker buildx -t "${secrets.DOCKER_USERNAME}/demoto-github-image":v1.0 .
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache  
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
+
+# OPTIMIZATION TASKS      
+      # Build cache to optimize build time
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+  
+            
+      
