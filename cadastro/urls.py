@@ -1,4 +1,8 @@
-from django.urls import path, re_path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from django.urls import path, include
+
+import os
 
 from .views import *
 
@@ -15,3 +19,7 @@ urlpatterns = [
     path('estado/', procura_cadastros_por_estado, name='usuarios-por-estados'),
     path('perfil/', procura_cadastros_por_perfil, name='cadastros-por-perfis'), 
 ]
+
+urlpatterns += static(
+    settings.STATIC_URL, document_root = os.path.join(settings.BASE_PATH, 'cadastro/templates/')
+)
