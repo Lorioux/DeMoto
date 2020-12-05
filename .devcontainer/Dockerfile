@@ -2,7 +2,7 @@ FROM alpine:latest
 
 EXPOSE 80 8080 8000
 
-RUN mkdir demoto
+RUN mkdir demoto demoto/.dbases
 
 WORKDIR /demoto
 

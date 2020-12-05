@@ -31,7 +31,7 @@ class Cadastro(models.Model):
         primary_key=True,
         unique=True)
     senha = models.CharField(verbose_name="Palavra-passe", max_length=128, blank=False)
-    perfilf = models.CharField(verbose_name="Perfil do usuario", max_length=2, choices=PERFIL, default="CONSUMIDOR", blank=False)
+    perfil = models.CharField(verbose_name="Perfil do usuario", max_length=2, choices=PERFIL, default="CONSUMIDOR", blank=False)
     estado = models.CharField(max_length=1, choices=ESTADO, default="PENDENTE")
     chave = models.CharField(max_length=255, blank=False, editable=False)
     criado_em = models.DateTimeField(auto_created=True, default=str(datetime.datetime.now()))

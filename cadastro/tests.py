@@ -104,9 +104,10 @@ class CadastroModeloTestCase(TestCase):
 class CadastroApiTestCase(TestCase):
 
     databases = {'cadastros'}
-       
-    def setUpTestData(self):
-        self.cadastros = [
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.cadastros = [
             Cadastro(usuario='testapi1@test.xyz', senha='simples'),
             Cadastro(usuario='testapi2@test.xyz', senha='simples'),
             Cadastro(usuario='testapi3@test.xyz', senha='simples')
@@ -127,7 +128,7 @@ class CadastroApiTestCase(TestCase):
     def test_3_procura_cadastros_por_estado(self):
         """Testa a pesquisa de cadastros por estado
         """
-        QuerySet(model=Cadastro).bulk_create(cadastros)
+        QuerySet(model=Cadastro).bulk_create(self.cadastros)
         response = self.client.get('/cadastro/usuarios/', data={'estado':'PENDENTE'})
         #print("Response code_3: ", response.content)
         self.assertContains(response=response, status_code=200, text=3) 
@@ -140,10 +141,12 @@ class CadastroApiTestCase(TestCase):
         response = self.client.post('/cadastro/usuario/estado/', data={'usuario':'testapi1@test.xyz', 'estado':'ATIVO'})
         self.assertContains(response=response, text=1, status_code=200)
         
-
     def test_5_renova_senha(self):
         """Testa a renovacao da palavra-passe
         """
         QuerySet(model=Cadastro).create(usuario='testapi@test.xyz', senha='simples')
         response = self.client.post('/cadastro/usuario/senha/', data={'usuario':'testapi@test.xyz', 'senha':'simples+diferente'})
         self.assertContains(response=response, text=1, status_code=200)
+
+    def test_6_modifica_perfil_cadastro(self):
+        

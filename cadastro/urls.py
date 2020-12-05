@@ -6,10 +6,14 @@ app_name = 'cadastro'
 urlpatterns = [
     path('', CadastroView.as_view(), name='cadastro'),
     path('usuario/',  include([
-        path('senha/', renova_senha, name='nova-senha'),
         path('novo/', cria_cadastro, name='novo-usuario'),
-        path('inscrito/', procura_cadastro_por_usuario, name='usuario'),
+        path('senha/', renova_senha, name='nova-senha'),
         path('estado/', modifica_estado_cadastro, name='novo-estado'),
+        path('perfil/', modifica_perfil_cadastro, name='novo-perfil'),
+        path('inscrito/', procura_cadastro_por_usuario, name='usuario'),
     ]) ),
-    path('usuarios/', procura_cadastros_por_estado, name='usuarios'),   
+    path('usuarios/', procura_cadastros_por_estado, name='usuarios'),
+    path('perfis/', procura_cadastro_por_perfil, name='perfis')  
 ]
+
+urlpatterns + = 
