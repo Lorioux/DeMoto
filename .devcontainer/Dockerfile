@@ -8,15 +8,15 @@ COPY ../ /demoto
 
 WORKDIR /demoto
 
-RUN cp .devcontainer/setup-entry-point.sh .
+RUN cp .devcontainer/setup-entry-point.sh .environ/
 
-#RUN export SETUP_FILE=/demoto/setup-entry-point.sh
+ENV SETUP_FILE="/demoto/.environ/setup-entry-point.sh"
 
 # Change mode to ./setup-entry-point.sh
-#RUN chmod +x setup-entry-point.sh
+RUN chmod +x $SETUP_FILE
 
-#ENTRYPOINT ["setup-entry-point.sh"]
+ENTRYPOINT ["/demoto/.environ/setup-entry-point.sh"]
 
 # run server at port 80
-#CMD python3 manage.py runserver 80
+CMD python3 manage.py runserver 80
 
