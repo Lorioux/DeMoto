@@ -15,9 +15,9 @@ COPY .devcontainer/setup-entry-point.sh .environ/setup-entry-point.sh
 ENV SETUP_FILE=/demoto/.environ/setup-entry-point.sh
 
 # Change mode to ./setup-entry-point.sh
-RUN chmod +x $SETUP_FILE
+RUN chmod +x .environ/setup-entry-point.sh
 
-ENTRYPOINT [$SETUP_FILE]
+ENTRYPOINT [".environ/setup-entry-point.sh"]
 
 # run server at port 80
 CMD python3 manage.py runserver 80
