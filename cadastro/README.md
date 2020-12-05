@@ -16,16 +16,122 @@ O cadastro é recurso da plataforma necessário para o registo inicial basico pa
 Sempre que o usuário (stakeholder) quiser subscrever os serviços será direcionado à página de cadastro - para criar um novo. Ou se tiver cadastro criado, sempre que quiser usar os serviços  subscritos, deverá optar por validar a sua autenticação através do cadastro.
 <ul>
   <li>criacao do cadastro</li>
-  <li>leitura do usuário </li>
-  <li>leitura do perfil escolhido </li>
-  <li>leitura do estado</li>
+  <li>pesquisa de cadastro por usuário </li>
+  <li>lpesquisa de cadastros por perfil </li>
+  <li>pesquisa de cadastros por estado</li>
   <li>modificação do perfil escolhido</li>
   <li>modificação do estado</li>
   <li>modificação da senha</li>
   <li>eliminação do cadastro</li>
 </ul>
 
-#### Modelo REST API
+### Modelo REST API de operacoes do cadastro
+#### Criacao do cadastro
 <pre>....
+[
+  {
+    "descricao": "criacao de novo cadastro",
+    "operacao": "novo-cadastro",
+    "url" :  "/cadastro/",
+    "dados" : {
+      "usuario":"",
+      "senha":"",
+      "perfil":"",
+    }
+  }
+] </pre>
 
-</pre>
+#### Pesquisa de cadastro por usuario
+<pre>....
+[
+  {
+    "descricao": "pesquisa de cadastro por usuario",
+    "operacao": "usuario",
+    "url" :  "/cadastro/usuario/inscrito/",
+    "dados" : {
+      "usuario":"",
+    }
+  }
+] </pre>
+
+#### Pesquisa de cadastros por perfil
+<pre>....
+[
+  {
+    "descricao": "pesquisa de cadastros por perfil",
+    "operacao": "procura_cadastros_por_perfil",
+    "url" :  "/cadastro/perfil/",
+    "dados" : {
+      "perfil":[""],
+    }
+  }
+] </pre>
+
+#### Pesquisa de cadastros por estado
+<pre>....
+[
+  {
+    "descricao": "pesquisa de cadastros por estado",
+    "operacao": "procura_cadastros_por_estado",
+    "url" :  "/cadastro/estado/",
+    "dados" : {
+      "estado":[""],
+    }
+  }
+] </pre>
+
+#### Modificacao do perfil de cadastro
+<pre>....
+[
+  {
+    "descricao": "modificacao do perfil do cadastro",
+    "operacao": "modifica_perfil_cadastro",
+    "url" :  "/cadastro/usuario/perfil/",
+    "dados" : {
+      "usuario":"",
+      "perfil":"",
+    }
+  }
+] </pre>
+
+#### Modificacao do estado de cadastro
+<pre>....
+[
+  {
+    "descricao": "modificacao do estado do cadastro",
+    "operacao": "modifica_perfil_cadastro",
+    "url" :  "/cadastro/usuario/estado/",
+    "dados" : {
+      "usuario":"",
+      "estado":"",
+    }
+  }
+] </pre>
+
+#### Modificacao da senha de cadastro
+<pre>....
+[
+  {
+    "descricao": "modificacao da senha do cadastro",
+    "operacao": "modifica_senha_cadastro",
+    "url" :  "/cadastro/usuario/senha/",
+    "dados" : {
+      "usuario":"",
+      "senha":"",
+    }
+  }
+] </pre>
+
+#### Eliminacao de cadastro
+<pre>....
+[
+  {
+    "descricao": "Eliminacao do cadastro",
+    "operacao": "elimina_cadastro",
+    "url" :  "/cadastro/",
+    "dados" : {
+      "usuario":"",
+      "senha":""
+    }
+  }
+] </pre>

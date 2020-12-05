@@ -12,6 +12,6 @@ urlpatterns = [
         path('perfil/', modifica_perfil_cadastro, name='novo-perfil'),
         path('inscrito/', procura_cadastro_por_usuario, name='usuario'),
     ]) ),
-    path('usuarios/', procura_cadastros_por_estado, name='usuarios'),
-    path('perfis/', procura_cadastros_por_perfil, name='perfis'), 
+    path('estado/', procura_cadastros_por_estado, name='usuarios-por-estados'),
+    path('perfil/', procura_cadastros_por_perfil, name='cadastros-por-perfis'), 
 ]
