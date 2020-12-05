@@ -12,6 +12,7 @@ if [ -f requirements.txt ]; then
   pip install -r requirements.txt
 fi
 
+# make migration and migrate databases
 python3 manage.py makemigrations
 python3 manage.py migrate
 
