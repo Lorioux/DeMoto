@@ -2,17 +2,15 @@ FROM alpine:latest
 
 EXPOSE 80 8080 8000
 
-RUN mkdir demoto demoto/.dbases
+RUN mkdir demoto demoto/.dbases demoto/.environ
 
 WORKDIR /demoto
 
 COPY ../ .
 
-RUN mkdir .environ
-
 COPY .devcontainer/setup-entry-point.sh .environ/setup-entry-point.sh
 
-ENV SETUP_FILE=/demoto/.environ/setup-entry-point.sh
+RUN export SETUP_FILE=/demoto/.environ/setup-entry-point.sh
 
 # Change mode to ./setup-entry-point.sh
 RUN chmod +x .environ/setup-entry-point.sh
