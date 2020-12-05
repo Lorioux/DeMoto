@@ -4,9 +4,9 @@ EXPOSE 80 8080 8000
 
 RUN mkdir demoto demoto/.dbases demoto/.environ
 
-WORKDIR /demoto
+COPY ../ /demoto
 
-COPY ../ .
+WORKDIR /demoto
 
 COPY .devcontainer/setup-entry-point.sh .environ/setup-entry-point.sh
 
