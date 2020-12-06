@@ -11,6 +11,7 @@ apk add python3 py3-pip
 pip install --upgrade pip
 
 cd /demoto
+source .venv/bin/activate
 
 # install dependencies from requirements.txt
 if [ -f requirements.txt ]; then 
