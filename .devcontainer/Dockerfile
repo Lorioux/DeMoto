@@ -18,5 +18,5 @@ RUN chmod +x /usr/local/share/setup-entry-point.sh
 RUN /usr/local/share/setup-entry-point.sh
 
 # run server at port 80
-CMD python3 manage.py runserver 80
+#CMD python3 manage.py runserver 80
 
