@@ -11,7 +11,7 @@ apk add python3 py3-pip
 pip install --upgrade pip
 
 cd /demoto
-source .venv/bin/activate
+#source .venv/bin/activate
 
 # install dependencies from requirements.txt
 if [ -f requirements.txt ]; then 
@@ -19,8 +19,8 @@ if [ -f requirements.txt ]; then
 fi
 
 # make migration and migrate databases
-python3 manage.py makemigrations
-python3 manage.py migrate
+#python3 manage.py makemigrations
+#python3 manage.py migrate
 
 # run the webserver
-python3 manage.py runserver 80
+python3 manage.py runserver 8000
