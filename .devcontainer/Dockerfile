@@ -10,6 +10,8 @@ WORKDIR /demoto
 
 RUN cp .devcontainer/setup-entry-point.sh /usr/local/share/
 
+RUN rm -R -f .devcontainer
+
 #ENV SETUP_FILE="/demoto/setup-entry-point.sh"
 
 # Change mode to ./setup-entry-point.sh
