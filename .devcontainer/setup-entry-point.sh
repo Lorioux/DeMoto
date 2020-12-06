@@ -22,3 +22,5 @@ fi
 python3 manage.py makemigrations
 python3 manage.py migrate
 
+# run the webserver
+python3 manage.py runserver 80
