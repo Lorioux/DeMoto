@@ -82,11 +82,17 @@ O condutor que aceitar a oferta em primeiro é atribuído a recolha da encomenda
 
 Sempre que o condutor fizer a entregada, por confirmar a morada do consumidor à porta do consumidor procede-se o registo definitivo da compra, e o processamento do pagamento. Quando terminado o processamento do pagamento com sucesso, o consumidor é notificado e recebe o recibo do seu pagamento. 
 
+
+
 #### 6.0 Serviços de reclamação 
 
-… 
+Sempre que necessario, o consumidor pode apresentar uma reclamacao relativa ao produto adquirido, o pagamento feito, o pedido colocado. Tambem, o Fornecedor pode faze-lo especialmente no que refere aos pagamentos esperados pelos produtos fornecidos. Ademais, o Agente de entregas pode apresentar uma reclamacao relacionada com a entrega que fez. Para tal, pelo uso da plataforma eles podem apresentar as sua reclamacoes, que sao capturadas e enderecadas a administracao do sistema.
 
-#### 7.0 Serviço de anúncios 
+
+
+#### 7.0 Serviço de cadastro de anúncios 
+
+Alem dos fornecedores, agencias publicitarias podem apresentar seus anuncios na plataforma, podendo ser visualizadas do lado do Consumidor e Agente de Entregas. Os anuncios sao cadastrados e apresentados na plataforma, conforme os dados do anunciante, o tempo de antena e numero de visualizacoes, e locais.
 
 … 
 
