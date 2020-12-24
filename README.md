@@ -37,6 +37,33 @@ As partes interessadas na execução dos diversos serviços da plataforma são d
      <dd></dd>
  </dl>
  </td>
+ <td>
+ <dl> 
+     <dt><h4>Agente de Entrega </h4></dt>
+     <span>Necessidades:</span>
+     <dd>- Receber notificacao de entregas disponiveis </dd>
+     <dd>- Bloqueiar pedidos de entrega</dd>
+     <dd>- Obter a distancia e o percurso </dd>
+     <dd>- Obter o valor da comissao pela entrega</dd>
+     <dd>- Poder receber suporte através da plataforma</dd>
+     <dd>- Receber a comissao pelas entregas </dd>
+     <dd>etc.</dd>
+     <dd></dd>
+ </dl>
+ </td>
+ <td>
+ <dl> 
+     <dt><h4>Agente de Entrega </h4></dt>
+     <span>Necessidades:</span>
+     <dd>- Cadastrar anuncios </dd>
+     <dd>- Ver o desempenhos dos seus anuncios</dd>
+     <dd>- Atualizar os anuncios </dd>
+     <dd>- Pagar pelos anuncios </dd>
+     <dd>- Poder receber suporte através da plataforma</dd>
+     <dd>etc.</dd>
+     <dd></dd>
+ </dl>
+ </td>
 </table>
  <br>
 
