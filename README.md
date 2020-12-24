@@ -61,7 +61,7 @@ Os produtos são os principais elementos de transação e interação nesta plat
 
  
 
-#### 3.0 Serviço de estabelecimentos 
+#### 3.0 Serviço de cadastro de estabelecimentos 
 
 Além da pessoa do Fornecedor, torna-se necessário o cadastro do estabelecimento comercial (entidade comercial legal) relacionado. O estabelecimento comercial tem o nome comercial, a marca registada, a morada fiscal, morada geográfica, o NIF, o logotipo.  
 
