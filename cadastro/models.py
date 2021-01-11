@@ -1,30 +1,29 @@
 from django.db import models
 from django.db.models import fields
 from django.db.models.constraints import UniqueConstraint
-from django.db.models.expressions import OrderBy
-from django.db.models.lookups import Regex
 import datetime
 
+from django.forms import CharField, ModelForm, widgets
+from django.forms.widgets import ChoiceWidget
 # Create your models here.
+PERFIL = (
+    ('FO', 'FORNECEDOR'),
+    ('CO', 'CONSUMIDOR'),
+    ('AG', 'AGENTE'),
+    ('CD', 'CONDUTOR')
+)
+ESTADO = (
+    ('P','PENDENTE'),
+    ('I', 'INATIVO'),
+    ('A', 'ATIVO'),
+    ('S', 'SUSPENSO')   
+)
 
 class Cadastro(models.Model):
     """
     Vamos criar um modelo de usuario contendo os campos de referencia basicos de usuario, a saber: o identificador, o email, e palavra-chase encriptada, 
     a data de criacao e data de ultima modificacao, estado do registo.
     """
-    PERFIL = (
-        ('FO', 'FORNECEDOR'),
-        ('CO', 'CONSUMIDOR'),
-        ('AG', 'AGENTE'),
-        ('CD', 'CONDUTOR')
-    )
-    ESTADO = (
-        ('P','PENDENTE'),
-        ('I', 'INATIVO'),
-        ('A', 'ATIVO'),
-        ('S', 'SUSPENSO')   
-    )
-
     usuario = models.CharField(verbose_name="Utilizador", 
         max_length=55, 
         blank=False, 
@@ -46,5 +45,12 @@ class Cadastro(models.Model):
 
     def __str__(self):
         return self.usuario
+
+class FormularioCadastro(ModelForm):
+    nome = CharField(max_length=55)
+    apelido = CharField(max_length=55)
+    class Meta:
+        model = Cadastro
+        fields= ['perfil','nome', 'apelido', 'usuario', 'senha']
 
 

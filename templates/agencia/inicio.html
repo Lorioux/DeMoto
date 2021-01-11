@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block site-main %}
+
+    {% block site-sponsored %}
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#productos">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Fornecedores">Fornecedores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Promocoes</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body" id="productos">
+        <section>
+            <span class="card-title">Sponsored</span>
+            <div class="container-fluid"  id="">
+                <p class="card-text">Pro</p>
+            </div>
+        </section>
+        <section>
+            <span class="card-title">Most searched</span>
+            <div class="container-fluid"  id="">
+                <p class="card-text">Pro</p>
+            </div>
+        </section>
+      </div>
+      <div class="card-body" id="Fornecedores">
+        
+      </div>
+    </div>
+
+    {% endblock site-sponsored %}
+{% endblock site-main %}

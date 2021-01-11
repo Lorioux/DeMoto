@@ -2,24 +2,17 @@ from datetime import datetime
 from django.db.models.query import QuerySet
 from django.http.response import HttpResponse
 from django.shortcuts import render
-import sys
 
 from django.views.generic import RedirectView
 from django.views.decorators.http import require_http_methods
 
-from .models import Cadastro
+from .models import Cadastro, FormularioCadastro
 
 # Create your views here.
-class CadastroView(RedirectView):
-
-    def get(self, request, *args, **kwargs)-> HttpResponse:
-        pass
-    
-    def post(self, request, *args, **kwargs):
-        pass
-
-    def index(request):
-       pass
+def inicio(request):
+    formulario = FormularioCadastro()
+    template_name = 'cadastro/inicio.html'
+    return render(request, template_name, {'site_title':'DEMOTO', 'formulario':formulario})
 
 def cria_cadastro(request):
     """Criacao de novo cadastro com base nos valores de  [usuario e senha] fornecidos no request.
@@ -38,7 +31,6 @@ def cria_cadastro(request):
 def renova_senha(request):
     """Renovacao da senha do usuario no cadastro. A partir do [usuario] fornecido verifica-se a existencia de um 
     registo nos cadastos e procede-se a substituicao da senha atual, com o valor da [senha] fornecida no request.
-
     Args:
         request: HttpRequest, com o metodo POST
     Retorna:

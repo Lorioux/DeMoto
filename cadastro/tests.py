@@ -1,3 +1,5 @@
+
+
 from django.db.models.query import QuerySet
 from django.http import response
 from django.test import TestCase
@@ -149,4 +151,4 @@ class CadastroApiTestCase(TestCase):
         self.assertContains(response=response, text=1, status_code=200)
 
     def test_6_modifica_perfil_cadastro(self):
-        
+       pass 

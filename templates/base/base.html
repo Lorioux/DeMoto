@@ -1,0 +1,96 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <!--FONTE AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+      #site-header {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: lightgray;
+        padding: 16px;
+          
+      }
+      #site-title {
+        flex: 30%;
+        align-self: center;
+      }
+      #site-search-gro {
+        display: flex;
+        flex-direction: row;
+        width: 40%;
+        align-self: center;
+        margin-right:16px;
+        background-color: white;
+      }
+      #site-search {
+        border: none;
+      }
+      #search-ico {
+        align-self: center;
+        font-size: 16px;
+        padding: 8px;
+      }
+      #profile-fig {
+          width: 10%;
+          border: 1 solid lightgray;
+          align-self: center;
+      }
+
+      #profile-fig
+    </style>
+  </head>
+  <body>
+    <!-- Site header-->
+    {% block site-header %}
+    <header class="site-header" id="site-header">
+      <h3 id="site-title">{{ site_title }}</h3>
+      <div class="form-group" id="site-search-gro">
+        <input type="text"
+          class="form-control" name="" id="site-search" aria-describedby="helpId" placeholder="Search">
+        <i class="fa fa-search" id="search-ico" aria-hidden="true"></i>
+      </div>
+      <figure class="figure " id="profile-fig">
+          <a href="/cadastro/ins/q=?" >
+          <img src="{{ MEDIA_URL }}profiles/xxx-photo.png" width="48px" height="48px" class="figure-img rounded"   alt=""></a>
+      </figure>
+    </header>
+
+    {% endblock site-header %} 
+    
+    <main>
+    {% block site-main %}
+
+      {% block page-header %}
+      {% endblock page-header %}
+
+      {% block site-sponsered %}
+      {% endblock site-sponsered %}
+
+      {% block site-trending %}
+      {% endblock site-trending %}
+
+    {% endblock site-main %} 
+    </main>
+    <footer>
+    {% block site-footer %}
+    {% endblock site-footer %}
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

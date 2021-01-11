@@ -5,6 +5,5 @@ from .views import *
 
 app_name = 'agencia'
 urlpatterns = [
-    path('', home, name='in')
+    path('', inicio, name='in'),
 ]
-

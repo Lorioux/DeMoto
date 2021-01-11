@@ -1,5 +1,5 @@
 """
-ASGI config for demotomiles project.
+ASGI config for demoto project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

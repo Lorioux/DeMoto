@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block site-main %}
+
+    {% block page-main %}
+    <div class="container">
+    <form>
+        {% csrf_token %}
+        {{ formulario }}
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-1-12 col-form-label"></label>
+            <div class="col-sm-1-12">
+                {{ perfil }}
+            </div>
+        </div>{% comment %} 
+        <fieldset class="form-group row">
+            <legend class="col-form-legend col-sm-1-12">Group name</legend>
+            <div class="col-sm-1-12">
+                
+            </div>
+        </fieldset>
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Action</button>
+            </div> 
+            
+        </div>{% endcomment %}
+    </form>
+</div>
+    {% endblock page-main %}
+
+{% endblock site-main %}
