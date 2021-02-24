@@ -37,6 +37,33 @@ As partes interessadas na execução dos diversos serviços da plataforma são d
      <dd></dd>
  </dl>
  </td>
+ <td>
+ <dl> 
+     <dt><h4>Agente de Entrega </h4></dt>
+     <span>Necessidades:</span>
+     <dd>- Receber notificacao de entregas disponiveis </dd>
+     <dd>- Bloqueiar pedidos de entrega</dd>
+     <dd>- Obter a distancia e o percurso </dd>
+     <dd>- Obter o valor da comissao pela entrega</dd>
+     <dd>- Poder receber suporte através da plataforma</dd>
+     <dd>- Receber a comissao pelas entregas </dd>
+     <dd>etc.</dd>
+     <dd></dd>
+ </dl>
+ </td>
+ <td>
+ <dl> 
+     <dt><h4>Agente de Entrega </h4></dt>
+     <span>Necessidades:</span>
+     <dd>- Cadastrar anuncios </dd>
+     <dd>- Ver o desempenhos dos seus anuncios</dd>
+     <dd>- Atualizar os anuncios </dd>
+     <dd>- Pagar pelos anuncios </dd>
+     <dd>- Poder receber suporte através da plataforma</dd>
+     <dd>etc.</dd>
+     <dd></dd>
+ </dl>
+ </td>
 </table>
  <br>
 
@@ -61,7 +88,7 @@ Os produtos são os principais elementos de transação e interação nesta plat
 
  
 
-#### 3.0 Serviço de estabelecimentos 
+#### 3.0 Serviço de cadastro de estabelecimentos 
 
 Além da pessoa do Fornecedor, torna-se necessário o cadastro do estabelecimento comercial (entidade comercial legal) relacionado. O estabelecimento comercial tem o nome comercial, a marca registada, a morada fiscal, morada geográfica, o NIF, o logotipo.  
 
@@ -82,11 +109,17 @@ O condutor que aceitar a oferta em primeiro é atribuído a recolha da encomenda
 
 Sempre que o condutor fizer a entregada, por confirmar a morada do consumidor à porta do consumidor procede-se o registo definitivo da compra, e o processamento do pagamento. Quando terminado o processamento do pagamento com sucesso, o consumidor é notificado e recebe o recibo do seu pagamento. 
 
+
+
 #### 6.0 Serviços de reclamação 
 
-… 
+Sempre que necessario, o consumidor pode apresentar uma reclamacao relativa ao produto adquirido, o pagamento feito, o pedido colocado. Tambem, o Fornecedor pode faze-lo especialmente no que refere aos pagamentos esperados pelos produtos fornecidos. Ademais, o Agente de entregas pode apresentar uma reclamacao relacionada com a entrega que fez. Para tal, pelo uso da plataforma eles podem apresentar as sua reclamacoes, que sao capturadas e enderecadas a administracao do sistema.
 
-#### 7.0 Serviço de anúncios 
+
+
+#### 7.0 Serviço de cadastro de anúncios 
+
+Alem dos fornecedores, agencias publicitarias podem apresentar seus anuncios na plataforma, podendo ser visualizadas do lado do Consumidor e Agente de Entregas. Os anuncios sao cadastrados e apresentados na plataforma, conforme os dados do anunciante, o tempo de antena e numero de visualizacoes, e locais.
 
 … 
 

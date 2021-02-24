@@ -1,18 +1,24 @@
 FROM alpine:latest
 
-EXPOSE 80:80 8080:8080 8000:8000
+EXPOSE 80
 
-RUN mkdir demoto demoto/.dbases
-
-WORKDIR /demoto
+RUN mkdir demoto demoto/.dbases demoto/.environ
 
 COPY ../ /demoto
 
-# Change mode to ./setup-entry-point.sh
-RUN chmod +x .devcontainer/setup-entry-point.sh
+WORKDIR /demoto
 
-ENTRYPOINT ["./setup-entry-point.sh"]
+RUN cp .devcontainer/setup-entry-point.sh /usr/local/share/
+
+RUN rm -R -f .devcontainer
+
+#ENV SETUP_FILE="/demoto/setup-entry-point.sh"
+
+# Change mode to ./setup-entry-point.sh
+RUN chmod +x /usr/local/share/setup-entry-point.sh
+
+CMD /usr/local/share/setup-entry-point.sh
 
 # run server at port 80
-CMD python3 manage.py runserver 80
+#CMD python3 manage.py runserver 80
 

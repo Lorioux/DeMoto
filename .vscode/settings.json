@@ -1,0 +1,20 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:demoto}/produto/productos.db",
+            "name": "produto"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "produto",
+            "database": "postgres",
+            "username": "postgres"
+        }
+    ]
+}
