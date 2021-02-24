@@ -78,8 +78,15 @@ WSGI_APPLICATION = 'microservice.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',#'django.db.backends.postgresql',
+        #'HOST': 'localhost',
+        #'PORT': '5432',
+        'NAME': BASE_DIR / 'productos.db', #db.sqlite3',
+        #'USERNAME':'postgres',
+        #'PASSWORD':'cara+olho',
+        # 'TEST' : {
+        #     'NAME':'produtos',
+        # }
     }
 }
 

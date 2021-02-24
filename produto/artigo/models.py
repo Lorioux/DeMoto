@@ -15,6 +15,7 @@ UNIDADE = [
             ('fa', 'Fatias'),
             ('lt', 'Litros'),
         ]
+
 class Artigo(models.Model):
     referencia  = models.CharField('Referencia', blank=True, default='Ref_00', max_length=55)
     categoria   = models.ForeignKey('Categoria', on_delete=models.DO_NOTHING,to_field='designacao', max_length=55)
@@ -34,9 +35,12 @@ class Artigo(models.Model):
         return self.nome
 
 class Categoria(models.Model):
-    designacao    = models.CharField('Designação', blank=False, default='', unique=True, max_length=55)
+    designacao  = models.CharField('Designação', blank=False, default='', unique=True, max_length=55)
 
     def __repr__(self):
+        return self.designacao
+
+    def __str__(self) -> str:
         return self.designacao
 
 

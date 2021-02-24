@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <form style="padding:36px">
+        {% csrf_token %}
+        
+    <div class="form-group col">
+      <input type="text"
+        class="form-control" name="categoria" id="categoria" aria-describedby="helpId" placeholder="Categorias" list="categorias">
+      <datalist id="categorias">
+        {% for cat in categorias %}
+            <option>{{cat}}
+        {% endfor %}
+      </datalist>
+    </div>
+    <div class="form-group col">
+      <input type="text"
+        class="form-control" name="nome" id="nome" aria-describedby="helpId" placeholder="Artigos" list="artigos">
+      
+      <datalist id="artigos">
+        {% for ar in artigos %}
+            <option>{{ar}}
+        {% endfor %}
+      </datalist>
+    </div>
+     <button type="submit" class="btn btn-primary" formaction={% url 'mostra-artigos' %} formmethod="GET">PESQUISAR</button>
+    </form>
+    {% for ar in artigos %}
+    <div class="card">
+        <div class="card-header">{{ar.nome}}</div>
+        <div class="card-body">
+            <img src="media/{{ar.nome}}/{{ ar.foto }}" >
+        </div>
+        <div class="card-footer">Footer</div>
+    </div>
+    {% endfor %}
+{% endblock body %}

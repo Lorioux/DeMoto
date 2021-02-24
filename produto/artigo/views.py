@@ -1,30 +1,64 @@
-from django.shortcuts import render
-from django.views.generic import RedirectView
+
+from django.db.models.query import QuerySet
+from artigo.models import Artigo, Categoria
+from django.forms.formsets import formset_factory
+from django.shortcuts import get_object_or_404, redirect, render, resolve_url
+from django.http import HttpResponse as response
 
 # Create your views here.
-from .models import FormularioProduto
-class VistaProduto(RedirectView):
+from .forms import FormularioArtigo
 
-    def get(self, request, *args, **kwargs):
-        template_name = 'inicio.html'
-        formulario = FormularioProduto()
+def adiciona_artigo(request, *args):
+    if request.POST:
+    
+        formulario = FormularioArtigo()
+        formulario.data = request.POST
+        formulario.clean
+        if formulario.is_valid:
+            #formulario.cleaned_data
+            formulario.save(commit=False)
+            return redirect('/artigo/mostrar')
+        #print(data)
+        else:
+            return response('Invalid')
+        #formulario.save(commit=False)
+        #return response('Cool')
+    else:
+        template_name = "./artigo.html"
+        return render(request, template_name,
+         {
+             'form': FormularioArtigo().as_pane(),
+         })
+
+def elimina_artigo(request):
+    pass
+
+def atualiza_artigo(request, preco, quantidade, unidades):
+    pass
+
+def modifica_foto(request):
+    pass 
+
+def mostra_artigos(request, *args):
+    template_name = './artigos.html'
+    if args is None:
+        categorias = Categoria.objects.all()
+        artigos = QuerySet(model=Artigo).all()
         return render(request, template_name, {
-            'form': formulario
+            'categorias': categorias,
+            'artigos': artigos
         })
-        pass
-
-    def post(self, request, *args, **kwargs):
-        pass
-
-    def put(self, request, *args, **kwargs):
-        pass
-
-    def head(self, request, *args, **kwargs):
-        pass
-
-    def delete(self, request, *args, **kwargs):
-        pass
-
-    def patch(self, request, *args, **kwargs):
-        pass
-
+    if args.__contains__('categoria'):
+        categorias = Categoria.objects.all()
+        artigos = QuerySet(model=Artigo).all()
+        return render(request, template_name, {
+          'categorias': categorias,
+          'artigos': artigos
+        })
+    else:
+        categorias = Categoria.objects.all()
+        artigos = Artigo.objects.all()
+        return render(request, template_name, {
+        'categorias': categorias,
+        'artigos': artigos
+        })
