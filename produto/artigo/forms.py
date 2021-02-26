@@ -1,3 +1,4 @@
+import os
 from typing import Text
 from django import forms
 from django.db.models.fields import TextField
@@ -37,12 +38,14 @@ class ButtonInput(forms.widgets.Input):
     pass
 
 class FormularioArtigo(ModelForm):
+
+    foto = forms.ImageField(allow_empty_file=True)
     submissao = ButtonField()
     submissao.widget.attrs.update({'style':'width:100px;', 'value':'Adicionar', 'formaction':'/artigo/adicionar', 'formmethod':"POST"})
 
     class Meta:
         model = Artigo
-        fields = ['categoria', 'nome', 'preco', 'moeda', 'quantidade', 'unidade', 'descricao', 'foto']
+        fields = ['categoria', 'nome', 'preco', 'moeda', 'quantidade', 'unidade', 'descricao']
         widgets = {
             'foto': FileInput(attrs={'width': '30%', 'height': '10%'}),            
         }
@@ -52,7 +55,7 @@ class FormularioArtigo(ModelForm):
             'artigo': 'artigo/artigo.css'
         }
     
-    def as_pane(self):
+    def as_divs(self):
         "Return this form rendered as HTML <span>s -- with <br>."
         return self._html_output(
             normal_row='<div%(html_class_attr)s>%(errors)s%(field)s%(help_text)s</div></br>',
@@ -62,23 +65,21 @@ class FormularioArtigo(ModelForm):
             errors_on_separate_row=True,
         )
 
-    def save(self, commit: bool):    
+    def save(self, commit: bool):
+
+        print(self.files)
+
         if self.errors:
             raise ValueError(
                 "Invalid provided data"
         )
+
         if commit:
-            Artigo.objects.update(foto        = self.data['foto'],
-                ome        = self.data['nome'],
-                reco       = self.data['preco'],
-                oeda       = self.data['moeda'],
-                uantidade  = self.data['quantidade'],
-                nidade     = self.data['unidade'],
-                escricao   = self.data['descricao']
-                )
-        else:
-            Artigo.objects.create(categoria_id   = self.data['categoria'] ,
-                foto        = self.data['foto'],
+            #print(self.data)
+            #save_file(self.data['foto'].data, self.data['nome'], self.data['foto'].name)
+            Artigo.objects.update(
+                categoria_id   = self.data['categoria'] ,
+                foto        = self.files['foto'],
                 nome        = self.data['nome'],
                 preco       = self.data['preco'],
                 moeda       = self.data['moeda'],
@@ -86,3 +87,26 @@ class FormularioArtigo(ModelForm):
                 unidade     = self.data['unidade'],
                 descricao   = self.data['descricao']
                 )
+        else:
+            #print(self.data)
+            #save_file(self.data['foto'].data, self.data['nome'], self.data['foto'].name)
+            Artigo.objects.create(
+                categoria_id   = self.data['categoria'] ,
+                foto        = self.files['foto'],
+                nome        = self.data['nome'],
+                preco       = self.data['preco'],
+                moeda       = self.data['moeda'],
+                quantidade  = self.data['quantidade'],
+                unidade     = self.data['unidade'],
+                descricao   = self.data['descricao']
+                )
+        pass
+    
+    
+
+
+def save_file(file, product_name, file_name):
+        with os.open(f'media/artigo/{product_name}/{file_name}', 'wb+') as destination:
+            for chunk in file:
+                destination.write(chunk)
+

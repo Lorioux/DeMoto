@@ -3,35 +3,42 @@
 {% block body %}
     <form style="padding:36px">
         {% csrf_token %}
-        
-    <div class="form-group col">
-      <input type="text"
-        class="form-control" name="categoria" id="categoria" aria-describedby="helpId" placeholder="Categorias" list="categorias">
-      <datalist id="categorias">
-        {% for cat in categorias %}
-            <option>{{cat}}
-        {% endfor %}
-      </datalist>
-    </div>
-    <div class="form-group col">
-      <input type="text"
-        class="form-control" name="nome" id="nome" aria-describedby="helpId" placeholder="Artigos" list="artigos">
-      
-      <datalist id="artigos">
-        {% for ar in artigos %}
-            <option>{{ar}}
-        {% endfor %}
-      </datalist>
-    </div>
-     <button type="submit" class="btn btn-primary" formaction={% url 'mostra-artigos' %} formmethod="GET">PESQUISAR</button>
+        <input type="text"
+          class="col-4" name="categoria" id="categoria" aria-describedby="helpId" placeholder="Categorias" list="categorias">
+        <datalist id="categorias">
+          {% for cat in categorias %}
+              <option>{{cat}}
+          {% endfor %}
+        </datalist>
+        <input type="text"
+          class="col-4" name="nome" id="nome" aria-describedby="helpId" placeholder="Artigos" list="artigos">
+        <datalist id="artigos">
+          {% for ar in artigos %}
+              <option>{{ar}}
+          {% endfor %}
+        </datalist>
+        </input>
+      <button type="submit" formaction={% url 'mostra-artigos' %} formmethod="GET">PESQUISAR</button>
     </form>
-    {% for ar in artigos %}
-    <div class="card">
-        <div class="card-header">{{ar.nome}}</div>
-        <div class="card-body">
-            <img src="media/{{ar.nome}}/{{ ar.foto }}" >
-        </div>
-        <div class="card-footer">Footer</div>
+    <div style="display: flex; flex-direction: wrap;">
+      {% for ar in artigos %}
+        <div class="card col-3">
+            <div class="card-header">{{ar.nome}}</div>
+            <div class="card-body">
+                <img src="/media/{{ ar.foto}}" width="90px" height="90px" >
+            </div>
+            <div class="card-footer">
+              <form action="{% url 'elimina-artigo' id=ar.id %}" method="POST">
+                {% csrf_token %}
+                {% comment %} <input type="number" hidden value={{ar.id}} id="id">  {% endcomment %}
+                <button >Elimina</button>
+              </form>
+            </div>
+        </div><br>
+      {% endfor %}
     </div>
-    {% endfor %}
+
+    {% block extra-js %}
+      <script src={% static 'js/artigos.js' %} type="application/javascript" ></script>
+    {% endblock extra-js %}
 {% endblock body %}
