@@ -1,17 +1,16 @@
+.dbases/*.sqlite3
+
 demoto/cybersec.py
 
 .venv/*.*
 
 .devcontainer/*.*
 
-.vs/
-
-.vscode/
+.dbases/
 
 .idea/
 
 .pytest_cache/
 
-**/__pycache__
+.vscode
 
-.dbases/
