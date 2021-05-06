@@ -11,9 +11,11 @@ As partes interessadas na execução dos diversos serviços da plataforma são d
 
 #### Descrição  das necessidades básicas das partes interessadas 
 <table>
+ <th><h4>Consumidor</h4></th>
+ <th><h4>Fornecedor </h4></th>
  <td>
  <dl> 
-    <dt><h4>Consumidor</h4></dt>
+    <dt></dt>
     <span>Necessidades:</span>
     <dd>- Pesquisar produtos a partir do telemóvel </dd>
     <dd>- Pedir produtos a partir do telemóvel </dd>
@@ -26,7 +28,7 @@ As partes interessadas na execução dos diversos serviços da plataforma são d
  </td>
  <td>
  <dl> 
-     <dt><h4>Fornecedor </h4></dt>
+     <dt></dt>
      <span>Necessidades:</span>
      <dd>- Cadastrar os meus produtos a partir da meu telemóvel ou PC</dd>
      <dd>- Receber pedidos de clientes(consumidores) à distância</dd>
