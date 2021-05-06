@@ -11,11 +11,11 @@ As partes interessadas na execução dos diversos serviços da plataforma são d
 
 #### Descrição  das necessidades básicas das partes interessadas 
 <table>
- <th><h4>Consumidor</h4></th>
- <th><h4>Fornecedor </h4></th>
+ <tr>
+  <th><h4>Consumidor</h4></th>
+  <th><h4>Fornecedor </h4></th>
+ </tr>
  <td>
- <dl> 
-    <dt></dt>
     <span>Necessidades:</span>
     <dd>- Pesquisar produtos a partir do telemóvel </dd>
     <dd>- Pedir produtos a partir do telemóvel </dd>
@@ -24,11 +24,8 @@ As partes interessadas na execução dos diversos serviços da plataforma são d
     <dd>- Poder submeter reclamação através da plataforma</dd>
     <dd>- Poder receber suporte através da plataforma</dd>
     <dd>etc.</dd>
- </dl>
  </td>
  <td>
- <dl> 
-     <dt></dt>
      <span>Necessidades:</span>
      <dd>- Cadastrar os meus produtos a partir da meu telemóvel ou PC</dd>
      <dd>- Receber pedidos de clientes(consumidores) à distância</dd>
@@ -37,7 +34,6 @@ As partes interessadas na execução dos diversos serviços da plataforma são d
      <dd>- Poder receber suporte através da plataforma</dd>
      <dd>etc.</dd>
      <dd></dd>
- </dl>
  </td>
 </table>
  <br>
@@ -55,13 +51,9 @@ Todos os usuários da plataforma têm a possibilidade de se cadastrar para a uti
 <li>Um usuário fornecedor sempre terá que ser associado a um estabelecimento comercial registadas nos serviços das finanças. </li>
 </ul>
 
- 
-
 #### 2.0 Serviços de cadastro de produtos 
 
 Os produtos são os principais elementos de transação e interação nesta plataforma. Antes que ocorra qualquer transação entre as partes interessadas, há um produto cadastrado ser oferecido (em venda). O cadastro de produtos, depende da sua categoria e natureza. Entretanto, todos os produtos têm o nome (opcionalmente a marca), o preço, a percentagem de desconto (opcional), a quantidade ou unidades ou volume. 
-
- 
 
 #### 3.0 Serviço de estabelecimentos 
 
